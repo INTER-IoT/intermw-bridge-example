@@ -1,0 +1,106 @@
+<!--
+
+    Copyright 2016-2018 Universitat Politècnica de València
+    Copyright 2016-2018 Università della Calabria
+    Copyright 2016-2018 Prodevelop, SL
+    Copyright 2016-2018 Technische Universiteit Eindhoven
+    Copyright 2016-2018 Fundación de la Comunidad Valenciana para la
+    Investigación, Promoción y Estudios Comerciales de Valenciaport
+    Copyright 2016-2018 Rinicom Ltd
+    Copyright 2016-2018 Association pour le développement de la formation
+    professionnelle dans le transport
+    Copyright 2016-2018 Noatum Ports Valenciana, S.A.U.
+    Copyright 2016-2018 XLAB razvoj programske opreme in svetovanje d.o.o.
+    Copyright 2016-2018 Systems Research Institute Polish Academy of Sciences
+    Copyright 2016-2018 Azienda Sanitaria Locale TO5
+    Copyright 2016-2018 Alessandro Bassi Consulting SARL
+    Copyright 2016-2018 Neways Technologies B.V.
+
+    See the NOTICE file distributed with this work for additional information
+    regarding copyright ownership.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.interiot.intermw.bridge</groupId>
+    <artifactId>example</artifactId>
+    <version>2.5.0</version>
+    <name>Bridge and Emulator for the Example Platform</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <intermw.version>2.5.0</intermw.version>
+        <log4j-version>2.7</log4j-version>
+    </properties>
+
+    <modules>
+        <module>example-bridge</module>
+        <module>example-platform-emulator</module>
+        <module>example-bridge-integration-test</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>3.0</version>
+                    <configuration>
+                        <header>misc/license-header.txt</header>
+                        <includes>
+                            <include>**/*.java</include>
+                            <include>**/*.xml</include>
+                            <include>**/*.properties</include>
+                        </includes>
+                        <excludes>
+                            <exclude>misc/*</exclude>
+                        </excludes>
+                        <mapping>
+                            <java>SLASHSTAR_STYLE</java>
+                        </mapping>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>nexus.inter-iot.eu-releases</id>
+            <url>http://nexus.inter-iot.eu/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>nexus.inter-iot.eu-snapshots</id>
+            <url>http://nexus.inter-iot.eu/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
